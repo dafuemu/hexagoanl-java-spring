@@ -7,10 +7,10 @@ spec:
   rules:
     - http:
         paths:
-          - path: /
-            pathType: Prefix
+          - pathType: Prefix
+            path: "/"
             backend:
               service:
                 name: account
                 port:
-                  number: 8080
+                  number: 80
