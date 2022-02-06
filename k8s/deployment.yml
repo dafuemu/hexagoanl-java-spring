@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
         - name: account
-          image: ghcr.io/dafuemu/spring_app:latest
+          image: ghcr.io/dafuemu/app:latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
