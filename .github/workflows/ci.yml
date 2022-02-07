@@ -51,7 +51,7 @@ jobs:
           context: .
           push: true
           tags: |
-            ghcr.io/dafuemu/app:latest
+            ghcr.io/dafuemu/app:v1
 
       - name: "Set up kubectl"
         uses: matootie/dokube@v1.3.4

@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
         - name: account
-          image: ghcr.io/dafuemu/app:latest
+          image: ghcr.io/dafuemu/app:v1
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
