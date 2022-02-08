@@ -6,6 +6,7 @@ import io.reflectoring.buckpal.common.WebAdapter;
 import io.reflectoring.buckpal.account.domain.Account.AccountId;
 import io.reflectoring.buckpal.account.domain.Money;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @WebAdapter
 @RestController
 @RequiredArgsConstructor
+@Slf4j
 class SendMoneyController {
 
 	private final SendMoneyUseCase sendMoneyUseCase;
@@ -22,13 +24,14 @@ class SendMoneyController {
 			@PathVariable("sourceAccountId") Long sourceAccountId,
 			@PathVariable("targetAccountId") Long targetAccountId,
 			@PathVariable("amount") Long amount) {
-
+		log.info("Transfer starting");
 		SendMoneyCommand command = new SendMoneyCommand(
 				new AccountId(sourceAccountId),
 				new AccountId(targetAccountId),
 				Money.of(amount));
 
 		sendMoneyUseCase.sendMoney(command);
+		log.info("Money was transfer");
 	}
 
 }
