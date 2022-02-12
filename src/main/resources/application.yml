@@ -5,12 +5,11 @@ server:
   port: 80
 
 spring:
-
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://mysql:3306/db
-    password: admin
-    username: admin
+    password: ${MYSQL_USER}
+    username: ${MYSQL_PASSWORD}
   jpa:
     database-platform: org.hibernate.dialect.MySQL5Dialect
     ddl-auto: create-drop
