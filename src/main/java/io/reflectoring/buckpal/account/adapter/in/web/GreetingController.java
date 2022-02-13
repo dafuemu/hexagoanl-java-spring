@@ -17,6 +17,6 @@ class GreetingController {
 
 	@GetMapping(path = "/greeting")
 	ResponseEntity<String> greeting() {
-		 return new ResponseEntity<>("Hello v1", HttpStatus.OK);
+		 return new ResponseEntity<>("Hello v2", HttpStatus.OK);
 	}
 }

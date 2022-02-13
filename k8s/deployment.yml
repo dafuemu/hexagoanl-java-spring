@@ -25,7 +25,7 @@ metadata:
   name: account
   namespace: bank
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: account
@@ -36,7 +36,7 @@ spec:
     spec:
       containers:
         - name: account
-          image: ghcr.io/dafuemu/app:v1
+          image: ghcr.io/dafuemu/app:v2
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
